@@ -39,7 +39,9 @@ print(S[:3])        # Same as S[0:3]
 print(S[:-1])       # Everything but the last again, but simpler (0:-1)
 print(S[:])          # All of S as a top-level copy (0:len(S))
 
-
+#Concatenation in Strings
+print(S + 'xyz')            # Concatenation
+print(S * 8)        # Repetition
 
 
 
