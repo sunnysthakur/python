@@ -43,6 +43,9 @@ print(S[:])          # All of S as a top-level copy (0:len(S))
 print(S + 'xyz')            # Concatenation
 print(S * 8)        # Repetition
 
+#Immutability
+
+
 
 
 
