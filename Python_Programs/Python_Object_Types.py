@@ -43,7 +43,23 @@ print(S[:])          # All of S as a top-level copy (0:len(S))
 print(S + 'xyz')            # Concatenation
 print(S * 8)        # Repetition
 
-#Immutability
+#Immutability [Numbers, Strings and tupples are immutables where as list and dictionaries isn't
+#S[0] = 'z'  # Immutable objects cannot be changed
+T = 'hello'
+T = 'z' + T[1:]     # But we can run expressions to make new objects
+print(T)
+
+#Lists Operations
+U = 'shrubbery'
+L = list(U)         # Expand to a list: [...]
+print(L)
+L[1] = 'c'          # Change it in place
+print(''.join(L))   # Join with empty delimiter
+
+B = bytearray(b'sunnys.thakur')      # A bytes/list hybrid (ahead)
+B.extend(b'@gmail.com')           # 'b' needed in 3.X, not 2.X
+print(B)                    # B[i] = ord(c) works here too
+print(B.decode())           # Translate to normal string
 
 
 
