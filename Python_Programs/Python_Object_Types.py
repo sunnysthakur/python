@@ -61,6 +61,12 @@ B.extend(b'@gmail.com')           # 'b' needed in 3.X, not 2.X
 print(B)                    # B[i] = ord(c) works here too
 print(B.decode())           # Translate to normal string
 
+# Type Specific Methods
+S = 'Welcome'
+print(S.find('come'))
+print(S.replace('come', 'done'))
+
+
 
 
 
