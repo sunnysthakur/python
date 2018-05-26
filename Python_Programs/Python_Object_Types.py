@@ -66,8 +66,18 @@ S = 'Welcome'
 print(S.find('come'))
 print(S.replace('come', 'done'))
 
+# Type Specific Methods 2
+line = 'aaa,bbb,ccccc,dd'
+print(line.split(','))     # Split on a delimiter into a list of substrings
 
+S = 'python'
+print(S.upper())        # Upper- and lowercase conversions
+print(S.isalpha())      # Content tests: isalpha, isdigit, etc.
 
+line = 'xxx,yyy,zzzzz,oo\n'
+print(line.rstrip())        # Remove whitespace characters on the right side
+
+print(line.rstrip().split(','))     # Combine two operations
 
 
 
