@@ -79,7 +79,13 @@ print(line.rstrip())        # Remove whitespace characters on the right side
 
 print(line.rstrip().split(','))     # Combine two operations
 
+# String Formatting
+print('%s, eggs, and %s' % ('spam', 'SPAM!'))       # Formatting expression (all)
+print('{0}, eggs, and {1}'.format('spam', 'SPAM!'))  # Formatting method (2.6+, 3.0+)
+print('{}, eggs, and {}'.format('spam', 'SPAM!'))    # Numbers optional (2.7+, 3.1+)
 
+print('{:,.2f}'.format(296999.2567))        # Separators, decimal digits
+print('%.2f|%+05d' % (3.14159, -42))        # Digits, padding, signs
 
 
 
