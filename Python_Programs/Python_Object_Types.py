@@ -87,6 +87,40 @@ print('{}, eggs, and {}'.format('spam', 'SPAM!'))    # Numbers optional (2.7+, 3
 print('{:,.2f}'.format(296999.2567))        # Separators, decimal digits
 print('%.2f|%+05d' % (3.14159, -42))        # Digits, padding, signs
 
+# Getting Help
+print(dir())
+print(dir(S))
+
+# double underscores
+print(S + 'IN!')
+print(S.__add__('IN!'))
+
+# Help function
+print(help(S.replace))
+
+# Other Ways to Code Strings
+S = 'A\nB\tC'       # \n is end-of-line, \t is tab
+print(len(S))       # Each stands for just one character
+print(ord('\n'))    # \n is a byte with the binary value 10 in ASCII
+
+Y = 'A\0B\0C'   # \0, a binary zero byte, does not terminate string.
+print(len(Y))
+
+print(Y)            # Non-printables are displayed as \xNN hex escapes (not clear). Output differ here and in Python command line ('A\x00B\x00C')
+
+# Output differ here and in Python command line. Output (\naaaaaaaaaaaaa\nbbb\'\'\'bbbbbbbbbb""bbbbbbb\'bbbb\ncccccccccccccc\n')
+msg = """                           
+aaaaaaaaaaaaa
+bbb'''bbbbbbbbbb""bbbbbbb'bbbb
+cccccccccccccc
+"""
+print(msg)
+
+# Unicode Strings
+print('sp\xc4m')        # 3.X: normal str strings are Unicode text
+print(b'a\x01c')        # bytes strings are byte-based data
+print(u'sp\u00c4m')      # The 2.X Unicode literal works in 3.3+: just str)
+
 
 
 
