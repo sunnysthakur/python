@@ -1,2 +1,0 @@
-#!C:\Users\sthakur\AppData\Local\Programs\Python\Python36-32\python.exe
-print('The Bright Side ' + 'of Life...')    # + means concatenate for strings
