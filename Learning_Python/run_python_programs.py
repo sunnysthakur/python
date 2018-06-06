@@ -42,8 +42,3 @@ a = 'Orange'
 b = 'Apple'
 c = 'Grapes'
 print(a, b, c)
-
-
-
-
-
