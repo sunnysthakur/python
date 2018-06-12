@@ -194,6 +194,12 @@ print([row[1] for row in M if row[1] % 2 == 0])     # Filter out odd items
 diag = [M[i][i] for i in [0, 1, 2]]           # Collect a diagonal from matrix
 print(diag)
 
+doubles = [c * 2 for c in 'spam']             # Repeat characters in a string
+print(doubles)
+
+print(list(range(4)))                      # 0..3 (list() required in 3.X)
+
+
 
 
 
