@@ -184,9 +184,15 @@ print(M[1])     # Get row 2
 print(M[1][2]) # Get row 2, then get item 3 within the row
 
 # Comprehensions
+col2 = [row[2] for row in M]        # Collect the items in column 2
+print(col2)
+print(M)                            # The matrix is unchanged
 
+print([row[1]+1 for row in M])     # Add 1 to each item in column 2
+print([row[1] for row in M if row[1] % 2 == 0])     # Filter out odd items
 
-
+diag = [M[i][i] for i in [0, 1, 2]]           # Collect a diagonal from matrix
+print(diag)
 
 
 
