@@ -131,12 +131,30 @@ print('spam'.encode('utf16'))    # But encoded to 10 bytes in UTF-16
 
 print('\u00A3', '\u00A3' .encode('latin'), b'\xA3'.decode('latin'))
 
-print(u'x' + b'y')      # Works in 2.X (where b is optional and ignored)
+#print(u'x' + b'y')      # Works in 2.X (where b is optional and ignored)
 #print(u'x' + 'y')       # Works in 2.X: u'xy'
 #print(u'x' + b'y')      # Fails in 3.3 (where u is optional and ignored)
-print(u'x' + 'y')       # Works in 3.3: 'xy'
+#print(u'x' + 'y')       # Works in 3.3: 'xy'
 #print('x' + b'y'.decode())  # Works in 3.X if decode bytes to str: 'xy'
-print('x'.encode() + b'y')  # Works in 3.X if encode str to bytes: b'xy'
+#print('x'.encode() + b'y')  # Works in 3.X if encode str to bytes: b'xy'
+
+# Pattern Matching
+import re
+match = re.match('Hello[\t]*(.*)world', 'Hello   Python world')
+print(match.group(1))
+
+match = re.match('[/:](.*)[/:](.*)[/:](.*)', '/usr/home:lumberjack')
+print(match.groups())
+
+print(re.split('[/:]', '/usr/home/lumberjack'))
+
+# Sequence Operations (Lists)
+L = [123, 'spam', 1.23]         # A list of three different-type objects
+print(len(L))                   # Number of items in the list
+print(L[0])                     # Indexing by position
+print(L[:-1])                   # Slicing a list returns a new list
+print(L+[4, 5, 6])              # Concat/repeat make new lists too
+print(L)                        # We're not changing the original list
 
 
 
