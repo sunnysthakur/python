@@ -156,6 +156,40 @@ print(L[:-1])                   # Slicing a list returns a new list
 print(L+[4, 5, 6])              # Concat/repeat make new lists too
 print(L)                        # We're not changing the original list
 
+# Type-Specific Operations
+L.append('NI')  # Growing: add object at end of list
+print(L)
+
+L.pop(2)        # Shrinking: delete an item in the middle
+print(L)        # "del L[2]" deletes from a list too
+
+M = ['bb', 'aa', 'cc']
+M.sort()
+print(M)
+
+M.reverse()
+print(M)
+
+# Bounds Checking (Lists)
+#print(L)
+#print(L[99])
+
+# Nesting
+M = [[1, 2, 3],     # A 3 × 3 matrix, as nested lists
+    [4, 5, 6],      # Code can span lines if bracketed
+    [7, 8, 9]]
+print(M)
+
+print(M[1])     # Get row 2
+print(M[1][2]) # Get row 2, then get item 3 within the row
+
+# Comprehensions
+
+
+
+
+
+
 
 
 
