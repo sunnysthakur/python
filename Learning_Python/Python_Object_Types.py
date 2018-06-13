@@ -176,8 +176,8 @@ print(M)
 
 # Nesting
 M = [[1, 2, 3],     # A 3 × 3 matrix, as nested lists
-    [4, 5, 6],      # Code can span lines if bracketed
-    [7, 8, 9]]
+     [4, 5, 6],      # Code can span lines if bracketed
+     [7, 8, 9]]
 print(M)
 
 print(M[1])     # Get row 2
@@ -197,8 +197,25 @@ print(diag)
 doubles = [c * 2 for c in 'spam']             # Repeat characters in a string
 print(doubles)
 
-print(list(range(4)))                      # 0..3 (list() required in 3.X)
+print(list(range(4)))                        # 0..3 (list() required in 3.X)
+print(list(range(-6, 9, 2)))                 # −6 to +6 by 2 (need list() in 3.X)
+print([[x ** 2, x ** 3] for x in range(4)])  # Multiple values, "if" filters
 
+print([[x, x/2, x*2] for x in range(-6, 7, 2) if x > 0])
+
+G = (sum(row) for row in M)         # Create a generator of row sums
+print(next(G))                             # iter(G) not required here
+print(next(G))                             # iter(G) not required here
+print(next(G))                             # iter(G) not required here
+
+print(list(map(sum, M)))                    # Map sum over items in M
+print({sum(row) for row in M})              # Create a set of row sums
+print({i : sum(M[i]) for i in range(3)})    # Creates key/value table of row sums
+
+print([ord(x) for x in 'spaam']) # List of character ordinals
+print({ord(x) for x in 'spaam'}) # Sets remove duplicates
+print({x: ord(x) for x in 'spaam'}) # Dictionary keys are unique
+print((ord(x) for x in 'spaam')) # Generator of values
 
 
 
