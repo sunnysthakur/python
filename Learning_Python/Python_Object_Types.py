@@ -217,6 +217,32 @@ print({ord(x) for x in 'spaam'}) # Sets remove duplicates
 print({x: ord(x) for x in 'spaam'}) # Dictionary keys are unique
 print((ord(x) for x in 'spaam')) # Generator of values
 
+# Dictionaries
+# Mapping Operations
+
+D = {'food': 'Spam', 'quantity': 4, 'color': 'pink'}
+print(D)
+print(D['food'])
+D['quantity'] += 1
+print(D)
+
+D={}
+D['name'] = 'Bob'
+D['job'] = 'dev'
+D['age'] = '40'
+print(D)
+print(D['name'])
+
+bob1 = dict(name='Bob', job='Dev', age=40)
+print(bob1)
+
+bob2 = dict(zip(['name', 'job', 'age'], ['bob', 'dev', 40]))        # Zipping
+print(bob2)
+
+# Nesting Revisited
+
+
+
 
 
 
