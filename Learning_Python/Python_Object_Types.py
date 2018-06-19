@@ -263,6 +263,22 @@ print(rec)
 rec = 0 # Now the object's space is reclaimed
 
 # Missing Keys: if Tests
+D = {'a': 1, 'b': 2, 'c': 3}
+print(D)
+
+D['e'] = 99         # Assigning new keys grows dictionaries
+print(D)
+
+#D['f'] # Referencing a nonexistent key is an error
+#print(D)
+
+print('f' in D)
+if not 'f' in D:            # Python's sole selection statement
+    print('missing')
+
+if not 'f' in D:
+    print('missing')
+    print('no, really...')      # Statement blocks are indented
 
 
 
