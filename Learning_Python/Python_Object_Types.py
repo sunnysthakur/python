@@ -303,9 +303,17 @@ for key in sorted(D):           # Sort the keys if not in order
 for c in 'spam':
     print(c.upper())
 
+# while loop 1
+x = 1
+while x <= 4:
+    print('spam!' * x)
+    x += 1
 
-
-
+# while loop 2
+x = 4
+while x > 0:
+    print('spam!' * x)
+    x -= 1
 
 
 
