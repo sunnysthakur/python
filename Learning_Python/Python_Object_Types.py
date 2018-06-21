@@ -280,6 +280,36 @@ if not 'f' in D:
     print('missing')
     print('no, really...')      # Statement blocks are indented
 
+value = D.get('x', 0)           # Index but with a default
+print(value)
+
+value = D['x'] if 'x' in D else 0   # if/else expression form
+print(value)
+
+# Sorting Keys: for Loops
+D = {'a': 1, 'b': 2, 'c': 3}
+print(D)
+
+Ks = list(D.keys())         # Unordered keys list
+print(Ks)                   # A list in 2.X, "view" in 3.X: use list()
+Ks.sort()                   # Sorted keys list
+print(Ks)
+for key in Ks:                  # Iterate though sorted keys
+    print(key, '=>', D[key])    # <== press Enter twice here (3.X print)
+
+for key in sorted(D):           # Sort the keys if not in order
+    print(key, '=>', D[key])
+
+for c in 'spam':
+    print(c.upper())
+
+
+
+
+
+
+
+
 
 
 
