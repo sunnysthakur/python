@@ -315,6 +315,40 @@ while x > 0:
     print('spam!' * x)
     x -= 1
 
+# Iteration and Optimization
+squares1 = [x ** 2 for x in [1, 2, 3, 4, 5]]
+print(squares1)
+
+squares2 = []
+for x in [1, 2, 3, 4, 5]:           # This is what a list comprehension does
+    squares2.append(x ** 2)         # Both run the iteration protocol internally
+    print(squares2)
+
+# Tuples
+T = (1, 2, 3, 4)        # A 4-item tuple
+print(len(T))           # Length
+
+print(T + (5, 6))       # Concatenation
+
+print(T[0])             # Indexing, slicing, and more
+
+print(T.index(4))       # Tuple methods: 4 appears at offset 3
+print(T.count(4))          # 4 appears once in tuple list
+
+#T[0] = 2               Tuples are immutable
+print((2,)+T[:1])       # Make a new tuple for a new value
+
+T = 'spam', 3.0, [11, 22, 33]
+print(T[1])
+print(T[2][1])
+#print(T.append(4))
+
+
+
+
+
+
+
 
 
 
