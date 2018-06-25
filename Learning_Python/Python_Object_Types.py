@@ -343,6 +343,14 @@ print(T[1])
 print(T[2][1])
 #print(T.append(4))
 
+# Files
+f = open('files/data.txt', 'w')   # Make a new file in output mode ('w' is write)
+print(f.write('Hello\n'))          # Write strings of characters to it
+print(f.write('World!\n'))          # Return number of items written in Python 3.X
+f.close()                          # Close to flush output buffers to disk
+
+
+
 
 
 
