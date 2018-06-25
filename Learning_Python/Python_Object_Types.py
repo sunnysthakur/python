@@ -344,10 +344,25 @@ print(T[2][1])
 #print(T.append(4))
 
 # Files
+# Create and write to files
 f = open('files/data.txt', 'w')   # Make a new file in output mode ('w' is write)
 print(f.write('Hello\n'))          # Write strings of characters to it
 print(f.write('World!\n'))          # Return number of items written in Python 3.X
 f.close()                          # Close to flush output buffers to disk
+
+# read files
+f = open('files/data.txt')          # 'r' (read) is the default processing mode
+text = f.read()                     # Read entire file into a string
+print(text)
+print(text.split())                       # File content is always a string
+
+for line in open('files/data.txt'):       # read file content using foe loop
+    print(line)
+
+# Binary Bytes Files
+
+
+
 
 
 
