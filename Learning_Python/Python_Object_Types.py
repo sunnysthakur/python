@@ -472,7 +472,7 @@ bob = Worker('bob smith', 50000)             # Make two instances
 sue = Worker('sue jone', 60000)              # Each has name and pay attrs
 print(bob.lastName())                        # Call method: bob is self
 print(sue.lastName())                        # sue is the self subject
-sue.giveRaise(.10)                           # Updates sue's payc
+sue.giveRaise(.10)                           # Updates sue's pay
 print(sue.pay)
 
 
