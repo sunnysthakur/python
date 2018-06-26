@@ -376,15 +376,104 @@ print(list(data))                               # A sequence of 8-bit bytes
 print(struct.unpack('>i4sh', data))             # Unpack into objects again
 
 # Unicode Text Files
+S = 'sp\xc4m'       # Non-ASCII Unicode text
+print(S)
+print(S[2])         # Sequence of characters
 
+file = open('files/unidata.txt', 'w', encoding='utf-8')     # Write/encode UTF-8 text
+print(file.write(S))                                               # 4 characters written
+file.close()
 
+text = open('files/unidata.txt', encoding='utf-8').read()           # Read/decode UTF-8 text
+print(len(text))                                                    # 4 chars (code points)
 
+raw = open('files/unidata.txt', 'rb').read()                        # Read raw encoded bytes
+print(raw)
+print(len(raw))                                                     # Really 5 bytes in UTF-8
+print(text.encode('utf-8'))                    # Manual encode to bytes
+print(raw.decode('utf-8'))                     # Manual decode to str
 
+print(text.encode('latin-1'))                          # Bytes differ in others
+print(text.encode('utf-16'))
 
+print(len(text.encode('latin-1')), len(text.encode('utf-16')))
+print(b'\xff\xfes\x00p\x00\xc4\x00m\x00'.decode('utf-16'))      # But same string decoded
 
+import codecs
+print(codecs.open('files/unidata.txt', encoding='utf-8').read())       # 2.X: read/decode text
+print(open('files/unidata.txt', 'rb').read())              # 2.X: read raw bytes
+print(open('files/unidata.txt').read())            # 2.X: raw/undecoded too
 
+# Other Core Types
+X = set('Spam')                     # Make a set out of a sequence in 2.X and 3.X
+Y = {'h', 'a', 'm'}                 # Make a set with set literals in 3.X and 2.7
+print(X, Y)                         # A tuple of two sets without parentheses
 
+print(X & Y)                        # Intersection
+print(X | Y)                        # Union
+print(X - Y)                        # Difference
+print(X > Y)                        # Superset
 
+print({n ** 2 for n in [1, 2, 3, 4]})   # Set comprehensions in 3.X and 2.7
+
+print(list(set({1, 2, 1, 3, 1})))           # Filtering out duplicates (possibly reordered)
+print(set('spam') - set('ham'))             # Finding differences in collections
+print(set('spam') == set('asmp'))           # Order-neutral equality tests (== is False)
+
+print('p' in set('spam'), 'p' in 'spam', 'ham' in ['eggs', 'spam', 'ham'])
+
+print(1/3)              # Floating-point (add a .0 in Python 2.X)
+print((2/3) + (1/2))
+
+import decimal      # Decimals: fixed precision
+d = decimal.Decimal('3.14')
+print(d + 1)
+
+decimal.getcontext().prec = 2
+print(decimal.Decimal('1.00') / decimal.Decimal('3.00'))
+
+from fractions import Fraction      # Fractions: numerator+denominator
+f = Fraction(2, 3)
+print(f + 1)
+print(f + Fraction(1, 2))
+
+print(1 > 2, 1 < 2)                 # Booleans
+print(bool('spam'))                 # Object's Boolean value
+
+X = None                            # None placeholder
+print(X)
+
+L = [None] * 100                    # Initialize a list of 100 Nones
+print(L)
+
+print(type(L))                      # Types: type of L is list type object
+print(type(type(L)))                # Even types are objects
+
+if type(L) == type([]):             # Type testing, if you must...
+    print('yes')
+
+if type(L) == list:                 # Using the type name
+    print('yes')
+
+if isinstance(L, list):              # Object-oriented tests
+    print('yes')
+
+# Class example
+class Worker:
+    def __init__(self, name, pay):          # Initialize when created
+        self.name = name                    # self is the new object
+        self.pay = pay
+    def lastName(self):
+        return self.name.split()[-1]        # Split string on blanks
+    def giveRaise(self, percent):
+        self.pay *= (1.0 + percent)         # Update pay in place
+
+bob = Worker('bob smith', 50000)             # Make two instances
+sue = Worker('sue jone', 60000)              # Each has name and pay attrs
+print(bob.lastName())                        # Call method: bob is self
+print(sue.lastName())                        # sue is the self subject
+sue.giveRaise(.10)                           # Updates sue's payc
+print(sue.pay)
 
 
 
