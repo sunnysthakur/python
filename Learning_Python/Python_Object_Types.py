@@ -360,6 +360,26 @@ for line in open('files/data.txt'):       # read file content using foe loop
     print(line)
 
 # Binary Bytes Files
+import struct
+packed = struct.pack('>i4sh', 7, b'spam', 8)    # Create packed binary data
+print(packed)                                   # 10 bytes, not objects or text
+
+file = open('files/data.bin', 'wb')             # Open binary output file
+print(file.write(packed))                       # Write packed binary data
+file.close()
+
+data = open('files/data.bin', 'rb').read()      # Open/read binary data file
+print(data)                                     # 10 bytes, unaltered
+print(data[4:8])                                # Slice bytes in the middle
+print(list(data))                               # A sequence of 8-bit bytes
+
+print(struct.unpack('>i4sh', data))             # Unpack into objects again
+
+# Unicode Text Files
+
+
+
+
 
 
 
