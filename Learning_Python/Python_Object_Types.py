@@ -463,6 +463,8 @@ class Worker:
     def __init__(self, name, pay):          # Initialize when created
         self.name = name                    # self is the new object
         self.pay = pay
+    def firstName(self):
+        return self.name.split()[0]
     def lastName(self):
         return self.name.split()[-1]        # Split string on blanks
     def giveRaise(self, percent):
@@ -470,7 +472,9 @@ class Worker:
 
 bob = Worker('bob smith', 50000)             # Make two instances
 sue = Worker('sue jone', 60000)              # Each has name and pay attrs
+print(bob.firstName())                       # Call first name
 print(bob.lastName())                        # Call method: bob is self
+print(sue.firstName())                       # Call first name
 print(sue.lastName())                        # sue is the self subject
 sue.giveRaise(.10)                           # Updates sue's pay
 print(sue.pay)
