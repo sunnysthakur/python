@@ -27,4 +27,31 @@ print('{0:4.2f}'.format(num))   # String formatting method: Python 2.6, 3.0, and
 print(repr('spam'))     # Used by echoes: as-code form
 print(str('spam'))      # Used by print: user-friendly form
 
+# Comparisons: Normal and Chained
+print(1 < 2)    # Less than
+print(2.0 > 1)  # Greater than or equal: mixed-type 1 converted to 1.0
+print(2.0 == 2.0)   # Equal value
+print(2.0 != 2.0)   # Not equal value
+
+X = 2
+Y = 4
+Z = 6
+print(X<Y<Z)    # Chained comparisons: range tests
+print(X<Y and Y<Z)
+
+print(X<Y>Z)
+print(X < Y and Y > Z)
+print(1 < 2 < 3.0 < 4)
+print(1 > 2 > 3.0 > 4)
+
+print(1 == 2 < 3)       # Same as: 1 == 2 and 2 < 3
+                        # Not same as: False < 3 (which means 0 < 3, which is true!)
+print(1.1 + 2.2 == 3.3)        # Shouldn't this be True?...
+print(1.1 + 2.2)         # Close to 3.3, but not exactly: limited precision
+print(int(1.1+2.2) == int(3.3))         # OK if convert: see also round, floor, trunc ahead
+                                        # Decimals and fractions (ahead) may help here too
+
+
+
+
 
