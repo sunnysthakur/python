@@ -1,4 +1,7 @@
+
 # Chapter 5
+from __future__ import division     # Enable 3.X "/" behavior
+
 # Numeric Types
 
 # Mixed types are converted up
@@ -51,7 +54,46 @@ print(1.1 + 2.2)         # Close to 3.3, but not exactly: limited precision
 print(int(1.1+2.2) == int(3.3))         # OK if convert: see also round, floor, trunc ahead
                                         # Decimals and fractions (ahead) may help here too
 
+print(10/4)             # Differs in 3.X: keeps remainder
+print(10/4.0)           # Same in 3.X: keeps remainder
+print(10//4)            # Same in 3.X: truncates remainder
+print(10 / 4.0)         # Same in 3.X: truncates to floor
+print(10 // 4)          # Use this in 2.X if truncation needed
+print(10//4.0)
 
+print(10 / 4) # This might break on porting to 3.X!
+print(10 / 4.0)
+print(10 // 4) # Use this in 2.X if truncation needed
+print(10 // 4.0)
 
+# Supporting either Python
+print(10 / 4)
+print(10 // 4)
+
+# Floor versus truncation
+import math
+print(math.floor(2.5))     # Closest number below value
+print(math.floor(-2.5))
+print(math.trunc(2.5))     # Truncate fractional part (toward zero)
+print(math.trunc(-2.5))
+
+print(5/2, 5/-2)
+print(5//2, 5//-2)      # Truncates to floor: rounds to first lower integer
+                        # 2.5 becomes 2, −2.5 becomes −3
+print(5/2.0, 5/-2.0)
+print(5//2.0, 5//-2.0)    # Ditto for floats, though result is float too
+
+print(5/-2)         # Keep remainder
+print(5//-2)        # Floor below result
+print(math.trunc(5/-2)) # Truncate instead of floor (same as int())
+print(5/float(-2))      # Remainder in 2.X
+print(5/-2, 5//-2)      # Floor in 2.X
+print(math.trunc(5/float(-2)))      # Truncate in 2.X
+
+print((5 / 2), (5 / 2.0), (5/-2.0), (5 /-2))  # 3.X true division
+print((5 // 2), (5 // 2.0), (5 //-2.0), (5//-2))     # 3.X floor division
+print((9 / 3), (9.0 / 3), (9 // 3), (9 // 3.0)) # Both
+
+#Integer Precision
 
 
