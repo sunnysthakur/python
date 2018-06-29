@@ -96,4 +96,25 @@ print((9 / 3), (9.0 / 3), (9 // 3), (9 // 3.0)) # Both
 
 #Integer Precision
 
+print(999999999999999999999999999999 + 1)  # Result in 3.X
+print(2 ** 200)
+
+# Complex numbers
+print(1j * 1J)
+print(2 + 1j * 3)
+print((2 + 1j) * 3)
+
+# Hex, Octal, Binary: Literals and Conversions
+print(0o1, 0o20, 0o377)     # Octal literals: base 8, digits 0-7 (3.X, 2.6+)
+print(0x01, 0x10, 0xFF)     # Hex literals: base 16, digits 0-9/A-F (3.X, 2.X)
+print(0b1, 0b10000, 0b11111111)     # Binary literals: base 2, digits 0-1 (3.X, 2.6+)
+
+print(0xFF, (15 * (16 ** 1)) + (15 * (16 ** 0)))    # How hex/binary map to decimal
+print(0x2F, (2 * (16 ** 1)) + (15 * (16 ** 0)))
+print(0xF, 0b1111, (1*(2**3) + 1*(2**2) + 1*(2**1) + 1*(2**0)))
+print(oct(64), hex(64), bin(64))        # Numbers=>digit strings
+
+print(64, 0o100, 0x40, 0b1000000)       # Digits=>numbers in scripts and strings
+print(int('64'), int('100', 8), int('40', 16), int('1000000', 2))
+print(int('0x40', 16), int('0b1000000', 2))     # Literal forms supported too
 
